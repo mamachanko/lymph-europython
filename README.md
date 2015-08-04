@@ -815,7 +815,7 @@ github.com/mamachanko/import-lymph](http://github.com/mamachanko/import-lymph).
 sudo apt-get install nfs-kernel-server
 ```
 
-* If you don't have ubuntu/vivid64 box on your pc
+* If you don't have an ubuntu/vivid64 box on your pc
 
 ```bash
 vagrant box add ubuntu/vivid64 https://cloud-images.ubuntu.com/vagrant/vivid/current/vivid-server-cloudimg-amd64-vagrant-disk1.box
@@ -826,4 +826,4 @@ vagrant box add ubuntu/vivid64 https://cloud-images.ubuntu.com/vagrant/vivid/cur
 ```bash
 exportfs: /home/oleg/prj/import-lymph does not support NFS export
 ```
-That's can be caused that your folder encrypted. So move *import-lymph* inside **unencrypted** folder
+That can be caused by an encrypted folder. Move *import-lymph* inside an **unencrypted** folder.
