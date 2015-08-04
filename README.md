@@ -38,7 +38,7 @@ vagrant up && vagrant ssh
 
 You will be prompted for your root password half-way through `vagrant up`
 because we use NFS to share files. If on Ubuntu(or somewhere else) you may have
-to install packages to support NFS.
+to install packages to support [NFS](#user-content-install_nfs).
 
 Once inside the box, the [`motd`](https://en.wikipedia.org/wiki/Motd_(Unix))
 contains more information. You can replay all the examples shown in this
@@ -244,7 +244,7 @@ itself and the discovery command would say that no instances are running.
 
 Let's pretend we don't know what the greeting service has to offer. We'd like
 to find out about its interface though:
- 
+
 ```bash
 » lymph inspect Greeting
 RPC interface of Greeting
@@ -646,7 +646,7 @@ our service in the `apply_config(self, config)` hook:
 
 ```python
 # service/service.py
-import lymph 
+import lymph
 
 
 class Service(lymph.Interface):
@@ -805,3 +805,25 @@ on GitHub.
 If you should spot any unclarity or errata within this article, you're
 very welcome to point them out at
 github.com/mamachanko/import-lymph](http://github.com/mamachanko/import-lymph).
+
+
+### Troubleshooting
+
+
+* <a name="install_nfs"> On Ubuntu you can install NFS with</a>
+```bash
+sudo apt-get install nfs-kernel-server
+```
+
+* If you don't have ubuntu/vivid64 box on your pc
+
+```bash
+vagrant box add ubuntu/vivid64 https://cloud-images.ubuntu.com/vagrant/vivid/current/vivid-server-cloudimg-amd64-vagrant-disk1.box
+```
+
+
+* If you get error like
+```bash
+exportfs: /home/oleg/prj/import-lymph does not support NFS export
+```
+That's can be caused that your folder encrypted. So move *import-lymph* inside **unencrypted** folder
