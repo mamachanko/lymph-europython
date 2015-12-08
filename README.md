@@ -153,7 +153,7 @@ boot the vagrant box: `vagrant up`.
 
 [This](https://github.com/mamachanko/import-lymph/blob/master/services/greeting.py)
 is what a simple greeting service looks like in lymph. Its interface is one RPC
-method called `greet` which takes a name, prints it, emits an event(containing
+method called `greet` which takes a name, prints it, emits an event (containing
 the name in the body) and returns a greeting for the given name.
 
 ```python
@@ -263,7 +263,7 @@ rpc lymph.status()
 ```
 
 We see that the interface of the greeting service is composed of inherited
-methods(from `lymph.Interface`) and our `greet` method. Let's exercise the
+methods (from `lymph.Interface`) and our `greet` method. Let's exercise the
 `greet` method. We'll use lymph's `request` command. Therefore, we have to
 provide the service name, the name of the method and the body of the request as
 valid JSON. What we expect to see is the Greeting service to return a Greeting
@@ -285,8 +285,8 @@ request lymph did the following:
 1. the service deserialized the request using MessagePack
 1. the service performed the heavy computation to produce the desired greeting for Flynne
 1. an event is being emitted to the event system about which we will find out more with the next service
-1. the response was once again serialized(MessagePack) and sent back(ZeroMQ) to the requestee
-1. the requestee(our shell client) deseria... and printed
+1. the response was once again serialized (MessagePack) and sent back (ZeroMQ) to the requestee
+1. the requestee (our shell client) deserialized and printed
 
 Whoi! That's a lot. This is where lymph lives up to this introduction's claim.
 This is all the glue that lymph is.
