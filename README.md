@@ -746,7 +746,7 @@ with ZooKeeper providing its address and name.  Once it's being stopped it
 unregisters itself. When you send a request to another service, lymph gets all
 instances' addresses and routes the request. That means, lymph does client-side
 load balancing. Request
-[round-robin](https://github.com/deliveryhero/lymph/blob/master/lymph/core/rpc.py#L140-155)
+[round-robin](https://github.com/deliveryhero/lymph/blob/master/lymph/core/rpc.py#L144-L159)
 over the instances of a service. The request itself is being serialized with
 [MessagePack](http://msgpack.org/) and send over the wire using
 [ZeroMQ](http://zeromq.org/).
